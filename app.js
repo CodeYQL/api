@@ -10,7 +10,7 @@ app.use(cors());
 
 const router = express.Router();
 const api = routes(router);
-app.use('/api', api);
+app.use('/', api);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);

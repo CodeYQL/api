@@ -18,16 +18,14 @@ function event(req, res) {
   res.json({});
 }
 
-function routes(router) {
-  router.post('/register', register);
-  router.post('/login', login);
-  router.post('/logout', logout);
-  router.get('/events', events);
-  router.get('/events/:event_id', event);
-
-  return router;
-}
-
 module.exports = {
-  routes
+  routes(router) {
+    router.post('/register', register);
+    router.post('/login', login);
+    router.post('/logout', logout);
+    router.get('/events', events);
+    router.get('/events/:event_id', event);
+  
+    return router;
+  }
 };
